@@ -4,6 +4,8 @@ var path = require('path');
 var mime = require('mime');
 var cache = {};
 
+var currency = require('./public/js/currency');
+
 function send404(response) {
     response.writeHead(404, {
         'Content-Type': 'text/plain'
@@ -61,3 +63,6 @@ server.listen(3000, function() {
 
 var chatServer = require('./lib/chat_server');
 chatServer.listen(server);
+
+
+console.log(currency.USToCanadian(30));
